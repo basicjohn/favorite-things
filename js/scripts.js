@@ -1,5 +1,6 @@
 let favoriteThingsList = [];
 let favoriteThingsInput;
+let removedInput = [];
 
 
 $(document).ready(function () {
@@ -10,9 +11,15 @@ $(document).ready(function () {
     favoriteThingsList.push(favoriteThingsInput);
     favoriteThingsInput = $("input#favoriteThings3").val();
     favoriteThingsList.push(favoriteThingsInput);
-    favoriteThingsList.shift(favoriteThingsInput);
     console.log(favoriteThingsList);
     event.preventDefault();
+    favoriteThingsList.forEach(function (thing) {
+      $(".output ol").append("<li>" + thing + "</li>");
+
+
+    });
   });
+
+
 });
 
